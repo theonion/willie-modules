@@ -64,6 +64,8 @@ class WebhookHandler(BaseHTTPRequestHandler):
             message = getattr(parser, event_name)(data)
             if message:
                 message_queue.put(message)
+        else:
+            print(data)
 
         return
 
